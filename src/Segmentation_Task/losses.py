@@ -118,28 +118,6 @@ class BCE_loss(nn.Module):
         return bce_out
 
 
-class IOU(torch.nn.Module):
-    def __init__(self, size_average = True):
-        super(IOU, self).__init__()
-        self.size_average = size_average
-
-    def forward(self, pred, gt):
-
-        return _iou(pred, gt, self.size_average)
-
-def IOU_loss(pred,gt):
-    iou_loss = IOU(size_average=True)
-    iou_out = iou_loss(pred, gt)
-    return iou_out
-
-class IOU_FL_Loss(nn.Module):
-    def __init__(self):
-        super(IOU_FL_Loss, self).__init__()
-
-    def forward(self, pred, gt):
-        loss = IOU_loss(pred, gt) + BCE_loss(pred, gt) 
-        return loss
-
 class Log_Cosh_Dice_Loss(nn.Module):
     """
     Implemented from Jadon, Shruti. (2020). A survey of loss functions for semantic segmentation. 
@@ -160,10 +138,10 @@ class Log_Cosh_Dice_FL_Loss(nn.Module):
     """
     This loss function is the one used in the presented work.
     Input:
-        - pred: the output from model 
-                shape (N, C, D, H, W)
+        - pred: the output from model
+                shape (N,C,D, H, W)
         - gt: ground truth map
-                shape (N, D, H, W)
+                shape (N,D, H, W)
     Return:
         -  Averaged LogCoshDice_and_Focal loss
         
