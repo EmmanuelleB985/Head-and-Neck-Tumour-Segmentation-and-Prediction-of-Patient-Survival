@@ -9,7 +9,7 @@ fluoro-deoxyglucose (FDG)-PET and Computed Tomography (CT) images and prediction
 Patient Outcome Challenge 2021 (HECKTOR 2021) which creates a platform for
 comparing segmentation methods and predictions of patient survival.
 
-For the segmentation task, we proposed a new network based on an encoder/decoder architecture with attention mechanisms and full inter- and intra-skip connections and attention mechanisms inspired from UNet3+ to take advantage of low-level and high-level semantics at full scales. Additionally, we used Conditional Random Fields (CRF) as a post-processing step to refine the predicted segmentation maps. 
+For the segmentation task, we proposed a new network based on an encoder/decoder architecture with attention mechanisms and full inter- and intra-skip connections inspired from UNet3+ to take advantage of low-level and high-level semantics at full scales. Additionally, we used Conditional Random Fields (CRF) as a post-processing step to refine the predicted segmentation maps. 
 
 For prediction of patient progression free survival, we extracted relevant clinical, radiomic, and deep learning features using Lasso regression. Our best performing model was a Cox proportional hazard regression. 
 
