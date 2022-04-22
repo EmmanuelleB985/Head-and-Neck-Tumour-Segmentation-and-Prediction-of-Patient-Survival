@@ -6,7 +6,6 @@ from torch.utils.data import DataLoader
 sys.path.append('../src/')
 import matplotlib.pyplot as plt
 %matplotlib inline
-from torch.utils.data import DataLoader
 import transforms
 import Dataset
 import losses
